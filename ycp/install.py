@@ -26,11 +26,13 @@ youtubeclipsrc='cd ~/.youtubeclip/file
 chmod u+x ../playlist/$1.ycp
 ../playlist/$1.ycp
 mpv --playlist=../playlist/$1.txt'
+ycplayssrc='cd ~./youtubeclip/playlist
+bash'
 
 installYoutubeClip(){
     gensh $2/youtube 'mpv https://www.youtube.com/watch?v=$1'
     gensh $2/ycp 'python -m ycp $1'
-    gensh $2/ycplays 'cd ~/.youtubeclip/playlist'
+    gensh $2/ycplays "$ycplayssrc"
     gensh $2/youtubeclip "$youtubeclipsrc"
     
     chmod u+x $2/ycp
