@@ -19,7 +19,7 @@ makesh() {
 }
 gensh() {
     makesh $1
-    echo $2 >> $1
+    echo "$2" >> $1
 }
 
 youtubeclipsrc='cd ~/.youtubeclip/file
@@ -35,6 +35,10 @@ installYoutubeClip(){
     chmod u+x $2/ycp
     chmod u+x $2/youtube
     chmod u+x $2/youtubeclip
+    
+    mkdir ~/.youtubeclip
+    mkdir ~/.youtubeclip/file
+    mkdir ~/.youtubeclip/playlist
 }
 
 uninstallYoutubeClip() {
