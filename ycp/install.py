@@ -46,7 +46,7 @@ uninstallYoutubeClip() {
     _s(f"chmod u+x {fn}")
 
 def main():
-    if len(_a) > 0 : _ = _a[1]
+    if len(_a) > 1 : _ = _a[1]
     else: _ = input()
     
     core(_)
