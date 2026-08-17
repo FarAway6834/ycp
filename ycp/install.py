@@ -26,7 +26,7 @@ youtubeclipsrc='cd ~/.youtubeclip/file
 chmod u+x ../playlist/$1.ycp
 ../playlist/$1.ycp
 mpv --playlist=../playlist/$1.txt'
-ycplayssrc='cd ~./youtubeclip/playlist
+ycplayssrc='cd ~/.youtubeclip/playlist
 bash'
 
 installYoutubeClip(){

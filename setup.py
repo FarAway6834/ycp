@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="ycp",
-    version="0.0.9",
+    version="0.0.10",
     description='read descript thag writed by korean what write in github.',
     packages=find_packages(exclude=[]),
     install_requires=["subpr"],
