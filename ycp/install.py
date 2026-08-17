@@ -2,7 +2,7 @@ from sys import argv as _a
 from os.path import join as _j
 
 def core(target):
-    with open(_j(target, ""), 'w') as fp: fp.write("""\
+    with open(_j(target, "youtubeclipsetup"), 'w') as fp: fp.write("""\
 chmod u+x $0
 
 alias shshebang='echo "#!/bin/sh" > '
