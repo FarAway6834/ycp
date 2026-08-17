@@ -49,6 +49,8 @@ uninstallYoutubeClip() {
     rm $2/youtubeclip
     rm $2/ycplays
     rm $1
+    
+    rm -r ~/.youtubeclip
 }
 
 if [ "$1" = "install" ]; then
