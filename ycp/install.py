@@ -32,17 +32,25 @@ installYoutubeClip(){
     gensh ycp 'python -m ycp $1'
     gensh youtubeclip "$youtubeclipsrc"
     
-    chmod u+x $(dirname "$0")/ycp
-    chmod u+x $(dirname "$0")/youtube
-    chmod u+x $(dirname "$0")/youtubeclip
+    chmod u+x $2/ycp
+    chmod u+x $2/youtube
+    chmod u+x $2/youtubeclip
 }
 
 uninstallYoutubeClip() {
-    rm $(dirname "$0")/ycp
-    rm $(dirname "$0")/youtube
-    rm $(dirname "$0")/youtubeclip
-    rm $0
-}""")
+    rm $2/ycp
+    rm $2/youtube
+    rm $2/youtubeclip
+    rm $1
+}
+
+if [ "$1" == "install" ]; then
+    install $0 $(dirname "$0")
+elif [ "$1" == "uninstall" ]; then
+    uninstall $0 $(dirname "$0")
+else
+    echo "install or uninstall only allowed"
+fi""")
     _s(f"chmod u+x {fn}")
 
 def main():
