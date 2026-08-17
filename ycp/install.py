@@ -1,8 +1,12 @@
 from sys import argv as _a
 from os.path import join as _j
+from os import system as _s
 
 def core(target):
-    with open(_j(target, "youtubeclipsetup"), 'w') as fp: fp.write("""\
+    fn = _j(target, "youtubeclipsetup")
+    with open(fn, 'w') as fp: fp.write("""\
+#!/bin/sh
+
 chmod u+x $0
 
 alias shshebang='echo "#!/bin/sh" > '
@@ -39,8 +43,12 @@ uninstallYoutubeClip() {
     rm $(dirname "$0")/youtubeclip
     rm $0
 }""")
+    _s(f"chmod u+x {fn}")
 
 def main():
-   core(_a[1] if len(_a) > 0 else input())
+    if len(_a) > 0 : _ = _a[1]
+    else: _ = input()
+    
+    core(_)
 
 if __name__ == "__main__": main()
